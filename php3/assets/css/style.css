@@ -1,0 +1,31 @@
+body{
+    background-color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: none;
+    margin: 10px;
+}
+h1{
+    background-color: aqua;
+    text-align: center;
+    color: black;
+    font-size: medium;
+}
+table{
+    font-size: 10px;
+    margin: 10px;
+    background-color: aqua;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px 30px ;
+}
+form{
+    padding: 10px 30px 15px 30px;
+    size-adjust: 5px;
+    background-color: aqua;
+}
+input{
+    font-size: 10px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    width: 100%;
+}
