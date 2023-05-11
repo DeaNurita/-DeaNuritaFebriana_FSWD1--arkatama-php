@@ -60,10 +60,5 @@
 
   <input type="submit" value="Submit">
 </form>
-
-<!-- Tutup koneksi -->
-<?php
-mysqli_close($conn);
-?>
 </body>
 </html>
