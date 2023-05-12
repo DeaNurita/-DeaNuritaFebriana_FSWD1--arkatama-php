@@ -1,5 +1,11 @@
 <?php 
+session_start();
 require_once 'connected.php';
+
+if(!isset($_SESSION['session_username'])){
+    header("location:login.php");
+    exit();
+}
 
 if(isset($_POST['delete']))
 {
@@ -14,6 +20,17 @@ if(isset($_POST['delete']))
     else
     {
         echo 'Failed to delete user.';
+    }
+}
+
+if (isset($_POST['reset'])) {
+    $query = "ALTER TABLE users AUTO_INCREMENT = 1";
+    $query_run = mysqli_query($conn, $query);
+
+    if ($query_run) {
+        header('Location: read.php');
+    } else {
+        echo 'Failed to reset ID.';
     }
 }
 
@@ -34,6 +51,7 @@ if(isset($_POST['delete']))
         <div class="row">
             <div class="card">
                 <h4>Data Pengguna
+                <a href="logout.php" class="btn btn-primary float-end">Logout</a>
                     <a href="create.php" class="btn btn-primary float-end">Tambah Pengguna</a>
                 </h4>
 
@@ -57,7 +75,7 @@ if(isset($_POST['delete']))
                             $query_run = mysqli_query($conn, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
-                            {
+                            { $counter = 1;
                                 foreach($query_run as $pengguna)
                                 {
                                     ?>

@@ -17,8 +17,5 @@ if (!$conn) {
 }
 
 
-<!-- Tutup koneksi -->
- <?php
-mysqli_close($conn);
-?>
+
 ?>
